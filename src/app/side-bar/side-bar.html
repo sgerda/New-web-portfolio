@@ -1,0 +1,37 @@
+<div class="sidebar" [class.active]="isSidebarActive">
+    <div class="top">
+        <i class="icon bx-menu" id="btn" (click)="toggleSidebar()"></i>
+    </div>
+    <div class="bottom">
+        <ul>
+            <li>
+                <a href="#">
+                    <i class="icon bx-phone"></i>
+                    <span class="nav-item">Phone</span>
+                </a>
+                <span class="tooltip">Phone</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon bx-gmail"></i>
+                    <span class="nav-item">Email</span>
+                </a>
+                <span class="tooltip">Email</span>
+            </li>
+            <li>
+                <a [href]="linkedInUrl" target="_blank">
+                    <i class="icon bx-linkedin"></i>
+                    <span class="nav-item">LinkedIn</span>
+                </a>
+                <span class="tooltip">LinkedIn</span>
+            </li>
+            <li>
+                <a [href]="githubUrl" target="_blank">
+                    <i class="icon bx-github"></i>
+                    <span class="nav-item">Github</span>
+                </a>
+                <span class="tooltip">Github</span>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,123 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'VT323', monospace;
+}
+.icon {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle; 
+    filter: invert(45%) sepia(15%) saturate(1200%) hue-rotate(80deg) brightness(95%) contrast(90%);
+}
+
+
+.bx-github   { background-image: url('icons/bx-github.svg'); }
+.bx-linkedin { background-image: url('icons/bx-linkedin.svg'); } 
+.bx-gmail    { background-image: url('icons/bx-gmail.svg'); }
+.bx-phone    { background-image: url('icons/bx-phone.svg'); }
+.bx-menu     { background-image: url('icons/bx-menu.svg'); }
+
+
+.bx-menu:hover {
+    cursor: pointer;
+    filter: brightness(0) invert(0.9);
+    transition: filter 0.3s ease;
+}
+.bottom{
+    position:absolute;
+    bottom: 20px;
+}
+
+.sidebar{
+    position: relative;
+    top: 0;
+    left: 0;
+    height: calc(100vh - 64px);
+    width: 80px;
+    background: #11101d;
+    padding: .4rem .8rem;
+    transition: all 0.5s ease;
+    z-index: 100;
+    flex-shrink: 0;
+    border-right: 1px solid #2d3a28;
+}
+.sidebar.active{
+    width: 250px;
+}
+
+.sidebar ul{
+    list-style: none;
+    margin-top: 20px;
+}
+
+.sidebar ul li {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+
+.sidebar.active span {
+    opacity: 1;
+}
+.sidebar ul li a span{
+    color: #fff
+}
+.sidebar ul li a .icon {
+    filter: invert(45%) sepia(15%) saturate(1200%) hue-rotate(80deg) brightness(95%) contrast(90%);
+    transition: filter 0.3s ease;
+}
+
+/* Hover: Muted Green */
+.sidebar ul li a:hover .icon {
+    filter: brightness(0) invert(0.9);
+}
+
+.sidebar .nav-item{
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar.active .nav-item{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sidebar ul li .tooltip{
+    position: absolute;
+    top: 50%;
+    left: 125px;
+    transform: translateY(-50%);
+    background: #1b9712;
+    color:#11101d;
+    box-shadow: 0 0.5rem rgba(0,0,0,0.3);
+    border-radius: .6rem;
+    padding: .5rem 1rem;
+    z-index: 20;
+    opacity: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.sidebar:not(.active) ul li a {
+    width: fit-content;
+    display: block;
+}
+
+.sidebar:not(.active) ul li a:hover ~ .tooltip{
+    opacity: 1;
+    left: 90px;
+}

@@ -1,0 +1,41 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'VT323', monospace;
+}
+
+.links{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-left: auto;
+}
+
+.mat-toolbar{
+    background-color: #11101d !important; 
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.nav-home, 
+.nav-projects, 
+.nav-about {
+    color: #718a3e !important;
+    text-decoration: none; 
+}
+
+links a.active {
+    color: #a3b18a !important;
+    border-bottom: 2px solid #718a3e;
+    border-bottom: 2px solid white;
+    text-decoration: none !important;
+}
+
+.links a:hover {
+    color: #ffffff !important;
+    text-shadow: 0 0 8px rgba(113, 138, 62, 0.6);
+    transition: all 0.3s ease;
+}
