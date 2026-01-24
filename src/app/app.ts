@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { SideBar } from "./side-bar/side-bar";
 import { TopBar } from "./top-bar/top-bar";
 import { ChatService } from './chat-service';
+import { API_KEY } from '../../.api_key/API_KEY';
 
 
 interface Message {
@@ -33,7 +34,7 @@ export class App {
     this.message.update(prev => [...prev, { text: '', sender: 'bot' }]);
 
     try {
-      const response = await fetch('http://192.168.1.144:8000/chat', {
+      const response = await fetch(API_KEY, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
