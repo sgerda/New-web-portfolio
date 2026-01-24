@@ -1,39 +1,10 @@
 <app-top-bar></app-top-bar>
-<div class="main-layout">
-    <!-- main-layout is in charge of the entire main page the side bar and the side bar -->
-    <app-side-bar></app-side-bar> 
-    <!-- Make any changes to the main content in the content-area -->
-    <main class="content-area">
-        <div class="welcome-message">
-            <h1>Welcome to My Portfolio</h1>
-            <p>My name is Saul Gerda.<br>
-                Feel free to explore my portfolio and interact with <br> 
-                Chatty my AI Bot assistant. He will be happy to answer any questions you have!
-            </p>
-        </div>
-        <div id="chat-container" class="chat-window">
-            <div class="chat-header">
-                <h3>Hello I am Chatty!</h3> 
-            </div>
-            <div id="chat-output" class="chat-message">
-                @for (msg of message(); track $index) {
-                <div [class]="msg.sender === 'user' ? 'user-msg' : 'bot-msg'">
-                    <strong>{{ msg.sender === 'user' ? 'You: ' : 'Chatty: ' }}</strong>
-                    {{ msg.text }}
-                </div>
-            }
-            </div>
-            <div class="chat-input-area">
-            <input 
-                id="chat-input"
-                type="text" 
-                [value]="userInput"
-                (input)="userInput = $any($event.target).value"
-                (keyup.enter)="handleSend()"
-                placeholder="Type your message here..." />
-            <button (click)="handleSend()" class="bnt">Send</button>
-            </div>
-        </div>
-        <router-outlet></router-outlet>
-    </main>
+<div class="app-container">
+    <app-side-bar></app-side-bar>
+
+    <div class="main-content">
+    
+
+    <router-outlet></router-outlet>
+    </div>
 </div>
