@@ -1,41 +1,43 @@
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'VT323', monospace;
-}
-
-.links{
+/* Container for the navigation links */
+.top-nav {
     display: flex;
-    gap: 15px;
-    align-items: center;
-    margin-left: auto;
-}
-
-.mat-toolbar{
-    background-color: #11101d !important; 
-    color: white;
-    display: flex;
+    gap: 20px;
     align-items: center;
 }
 
-.nav-home, 
-.nav-projects, 
-.nav-about {
-    color: #718a3e !important;
-    text-decoration: none; 
+/* Base style for all links */
+.top-nav a {
+    color: #718a3e; /* Your signature green */
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-links a.active {
+/* Hover effect: Glow and turn white */
+.top-nav a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(113, 138, 62, 0.8);
+}
+
+/* The "Active" state when a user is on that page */
+/* This matches routerLinkActive="active-link" in your HTML */
+.active-link {
     color: #a3b18a !important;
     border-bottom: 2px solid #718a3e;
-    border-bottom: 2px solid white;
-    text-decoration: none !important;
+    text-shadow: 0 0 5px rgba(163, 177, 138, 0.5);
 }
 
-.links a:hover {
-    color: #ffffff !important;
-    text-shadow: 0 0 8px rgba(113, 138, 62, 0.6);
-    transition: all 0.3s ease;
+/* Toolbar adjustments */
+.mat-toolbar {
+    background-color: #11101d !important; 
+    display: flex;
+    justify-content: space-between; /* Pushes links to the right */
+    align-items: center;
+    padding: 0 20px;
+}
+
+.links {
+    margin-left: auto; /* Ensures the nav stays on the right */
 }

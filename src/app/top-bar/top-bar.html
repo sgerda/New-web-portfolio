@@ -1,13 +1,17 @@
-
 <mat-toolbar>
-    <span class="spcer">
+    <div class="logo">PORTFOLIO</div>
 
-    </span>
     <div class="links">
-        <!-- TODO Afte creating the about and projects pages linke them to the top bar -->
-        <a class ="nav-home" mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
-        <a class ="nav-projects"mat-button routerLink="/projects" routerLinkActive="active">Projects</a>
-        <a href='app-projects-tab' class="nav-about"mat-button routerLink="/about" routerLinkActive="active">About</a>
+    <nav class="top-nav">
+        <a routerLink="/" 
+            routerLinkActive="active-link" 
+            [routerLinkActiveOptions]="{exact: true}">Home</a>
+            
+        <a routerLink="/projects-tab" 
+            routerLinkActive="active-link">Projects</a>
+            
+        <a routerLink="/about" 
+            routerLinkActive="active-link">About</a>
+        </nav>
     </div>
-    
 </mat-toolbar>
