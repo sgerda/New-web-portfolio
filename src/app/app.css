@@ -12,6 +12,19 @@
     flex-direction: column;
     overflow-y: auto;
 }
+.sidebar {
+    position: fixed; /* Change from relative to fixed */
+    top: 0;
+    left: 0;
+    height: 100vh; /* Stretch to full viewport height */
+    width: 80px;
+    background: #11101d;
+    padding: .4rem .8rem;
+    transition: all 0.5s ease;
+    z-index: 100;
+    flex-shrink: 0;
+    border-right: 1px solid #2d3a28;
+}
 
 /* Your existing styles */
 * {
