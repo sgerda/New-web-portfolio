@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Directive, ElementRef, Renderer2, 
   Inject, PLATFORM_ID, OnInit, OnDestroy, Input, 
-  forwardRef } from '@angular/core';
+  HostListener } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 
@@ -40,7 +40,7 @@ export class ProjectsTab implements OnInit, OnDestroy{
       this.observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           const ratio = entry.intersectionRatio;
-          const scale = 1 - ((1 - ratio) * this.stackFactor);
+          const scale = 1.3 - ((1 - ratio) * this.stackFactor);
           const blur = (1 - ratio) * this.blurMax;
           const opacity = 0.5 + (ratio * 0.5);
 

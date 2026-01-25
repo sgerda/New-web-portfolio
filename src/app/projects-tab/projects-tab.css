@@ -1,26 +1,27 @@
-.stack-container{
-    padding: 100px 0 500px 0;
+.stack-container {
+    padding: 10vh 0 50vh 0; /* Extra bottom padding allows the last card to scroll up */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15vh;
-    background: #ce3535;
-
+    gap: 10vh; /* Space between cards */
+    background-color: #0d0f14;
 }
 
-.card{
+.card {
     position: sticky;
+    /* This 'top' value must match your [style.top.px] logic or stay consistent */
+    top: 10vh; 
     width: 90%;
-    max-width: 500px;
+    max-width: 900px;
     height: 350px;
     will-change: transform, filter;
-    transition: transform 0.1s ease-out;
+    /* Remove the CSS transition; JS needs to handle it smoothly for scroll sync */
 }
 
-.card-inner{
+.card-inner {
     height: 100%;
-    background: linear-gradient(145deg, #cfc0c0, #7e3db3);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: linear-gradient(145deg, #538f7d, #718a3e);
+    border: 3px solid rgb(133, 27, 77);
     border-radius: 30px;
     padding: 40px;
     color: white;

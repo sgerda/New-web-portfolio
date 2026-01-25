@@ -1,6 +1,6 @@
 <div class="stack-container">
     @for (card of cards; track card.id; let i = $index) {
-        <div class="card" appProjectsTab [stackFactor]="0.1" [style.top.px]="60 + (i * 30)">
+        <div class="card" appProjectsTab [stackFactor]="0.1" [style.top.px]="40 + (i * 30)">
             <div class="card-inner">
                 <span>0{{i+1}}</span>
                 <h2>{{card.title}}</h2> <p>{{card.description}}</p> </div>
