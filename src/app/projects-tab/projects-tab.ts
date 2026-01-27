@@ -40,7 +40,7 @@ export class ProjectsTab implements OnInit, OnDestroy{
       this.observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           const ratio = entry.intersectionRatio;
-          const scale = 1.3 - ((1 - ratio) * this.stackFactor);
+          const scale = 1.09 - ((1 - ratio) * this.stackFactor);
           const blur = (1 - ratio) * this.blurMax;
           const opacity = 0.5 + (ratio * 0.5);
 
@@ -90,6 +90,13 @@ export class ProjectsTabComponent {
       description: 'Second project description',
       image: 'assets/images/p2.jpg',
       color: '#7e3db3'
+    },
+    {
+      id: 3,
+      title: 'Project 3',
+      description: 'Third project description',
+      image: 'assets/images/p2.jpg',
+      color: '#3ca2ca'
     }
   ];
 }

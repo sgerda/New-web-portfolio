@@ -1,9 +1,11 @@
-<div class="stack-container">
+<div class="main-container">
+    <div class="stack-container">
     @for (card of cards; track card.id; let i = $index) {
         <div class="card" appProjectsTab [stackFactor]="0.1" [style.top.px]="40 + (i * 30)">
-            <div class="card-inner">
+            <div class="card-inner" [style.background]="card.color" >
                 <span>0{{i+1}}</span>
                 <h2>{{card.title}}</h2> <p>{{card.description}}</p> </div>
         </div>
-    }
+    } <div style="height: 40vh;"></div>
+    </div>
 </div>
