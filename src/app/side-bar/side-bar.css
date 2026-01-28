@@ -1,5 +1,5 @@
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,7 +7,9 @@
 }
 .icon {
     width: 24px;
-    height: 24px;
+    height: 2vh;
+    min-height: 24px;
+    min-width: 24px;
     display: inline-block;
     background-size: contain;
     background-repeat: no-repeat;
@@ -23,8 +25,9 @@
 .bx-phone    { background-image: url('icons/bx-phone.svg'); }
 .bx-menu     { background-image: url('icons/bx-menu.svg'); }
 
-
+/* TODO: Fix the active sidebar window resizing the chatbot gets on top when side bar is active */
 .bx-menu:hover {
+    
     cursor: pointer;
     filter: brightness(0) invert(0.9);
     transition: filter 0.3s ease;
@@ -38,12 +41,13 @@
     position: relative;
     top: 0;
     left: 0;
-    height: calc(100vh - 64px);
+    height: 100vh;
+    height: 100%;
     width: 80px;
     background: #11101d;
-    padding: .4rem .8rem;
+    padding: 6px 14px;
     transition: all 0.5s ease;
-    z-index: 100;
+    z-index: 1000;
     flex-shrink: 0;
     border-right: 1px solid #2d3a28;
 }
@@ -61,6 +65,7 @@
     height: 50px;
     width: 100%;
     line-height: 50px;
+    margin: 0 5px
 }
 
 .sidebar ul li a {
@@ -120,4 +125,25 @@
 .sidebar:not(.active) ul li a:hover ~ .tooltip{
     opacity: 1;
     left: 90px;
+}
+
+@media (max-width: 768px) {
+    .sidebar{
+        position: fixed;
+        width: 60px;
+        padding: 6px 10px;
+    }
+
+    .sidebar.active{
+        width: 250px;
+        box-shadow: 5px 0 15px rgb(0,0,0,0.7);
+        
+    }
+    .sidebar ul li .tooltip {
+        display: none !important;
+    }
+
+    .sidebar .nav-item{
+        transition: opasity 0.1s ease;
+    }
 }

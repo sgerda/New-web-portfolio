@@ -1,77 +1,100 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
-    overflow: hidden; /* This kills the main page scroll */
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    width: 100%;
 }
 .stack-container {
     
     &::-webkit-scrollbar { display: none; }
     -ms-overflow-style: none;
+    scroll-behavior: smooth;
     scrollbar-width: none;
-    
-    
-    overflow-y: auto;
     width: 100%;             
     max-width: 1300px;
     height: 100%;
-    overflow-y: auto;           
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;           
     margin: 0 auto;          
     border: none;
-    padding: 2rem;
+    /* padding: 2rem; */
     position: relative;
-    padding: 1vh 1rem 5vh 6rem; 
+    padding: 20px 2rem 20vh 2rem;
     box-sizing: border-box;
 }
+
+.stack-container::-webkit-scrollbar{
+    display: none;;
+}
+
 
 .main-container{
     display: flex; 
     justify-content: center; 
     align-items: flex-start; 
-    height: 95vh;
     padding: 0 1rem;
     height: 95vh;
-    width: 90vw;
-    overflow: hidden;
-
+    width: 100%;
+    padding:  1rem;
+    box-sizing: border-box;
+    min-height: 94vh;
+    background-color: none;
 }
+
 
 .card {
     position: sticky;
-    top: 10vh; 
     width: 100%;
     max-width: 1000px;
-    height: auto;
-    margin-bottom: 6vh;
-    will-change: transform, filter;
-    padding: 0%;
+    margin: 0 auto 5vh auto; 
+    will-change: transform; 
+    box-sizing: border-box;
 }
 
 .card-inner {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
     height: 60vh;
+    min-height: 300px; 
     border: 1px solid rgb(30, 160, 51);
     border-radius: 30px;
     padding: 40px;
     color: white;
-    overflow-y: auto;
-    
-    
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
+    position: relative;
+    box-shadow: 0 10px 30px rgba(4, 241, 48, 0.5); 
 }
 
+/* --- MOBILE OPTIMIZATION --- */
 @media (max-width: 768px) {
+    /* Relax the container constraints */
     .stack-container {
-        padding: 1rem;
-        height: 90vh;
-    }
-    
-    .card {
-        height: 50vh; 
-        top: 2vh;
+        padding: 10px 1rem 15vh 1rem; /* Less padding on sides */
     }
 
+    /* Adjust Card visuals */
     .card-inner {
-        padding: 20px; 
+        padding: 20px; /* Less internal padding */
+        border-radius: 20px;
+        height: 55vh; /* Slightly shorter on mobile to see other cards */
+    }
+    
+    .card h2 {
+        font-size: 1.5rem; /* Prevent massive text breaking layout */
+    }
+}
+
+/* --- LANDSCAPE PHONE FIX --- */
+/* If the user turns their phone sideways, 60vh is too tall */
+@media (max-height: 500px) {
+    .card-inner {
+        height: 80vh; 
+        display: flex;
+        flex-direction: row; /* Optional: layout side-by-side for landscape */
+        align-items: center;
+        gap: 20px;
     }
 }

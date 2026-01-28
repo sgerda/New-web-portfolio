@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,16 +8,24 @@
 .main-layout{
     display: flex;
     flex-direction: row;
-    min-height: calc(100vh - 64px);
+    height: 100vh;
+    height: 95dvh;
+    width: 100%;
     background-color: #0d0f14;
-    overflow: hidden;
+    overflow: hidden
 }
 
 .content-area{
     flex-grow: 1;
+    height: 100%;
     padding: 1.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
     color: white;
-    overflow-y: auto;;
+    overflow-y: auto; 
+    position: relative;
+    transition: padding 0.3s ease;
 }
 
 .welcome-message h1 {
@@ -25,12 +33,15 @@
     text-transform: uppercase;
     letter-spacing: 2px;
 }
+
 .welcome-message {
-    max-width: 800px;
-    margin-bottom: 3rem;
+    width: 100%;
+    max-width: 750px; /* Matches chat window width */
+    margin-bottom: 1.5rem; /* Reduced slightly for compact screens */
     border-left: 3px solid #718a3e;
     padding-left: 20px;
     font-size: 1.2rem;
+    flex-shrink: 0; /* Ensures this doesn't get crushed */
 }
 
 /* Chat box styling section */
@@ -133,4 +144,45 @@
     border-radius: 15px 15px 15px 0;
     max-width: 80%;
     border-left: 3px solid #718a3e;
+}
+
+@media (max-width: 768px) {
+    /* 1. COMPENSATE FOR FIXED SIDEBAR */
+    .content-area {
+        padding: 1rem;
+        /* Add left padding equal to Sidebar Width (60px) + Gap (10px) */
+        padding-left: 70px; 
+    }
+
+    /* 2. MAKE CHAT TALLER ON MOBILE */
+    .chat-window {
+        /* On phones, use more vertical space since we have no side content */
+        height: 75vh; 
+        margin-bottom: 1rem;
+    }
+    
+    /* 3. FONT SIZING */
+    .welcome-message h1 {
+        font-size: 1.5rem;
+    }
+    .welcome-message {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    /* 4. MAXIMIZE BUBBLE SPACE */
+    .user-msg, .bot-msg {
+        max-width: 90%;
+    }
+}
+
+/* LANDSCAPE MODE FIX (Short screens) */
+@media (max-height: 500px) {
+    .chat-window {
+        height: 85vh; /* Fill almost all height */
+        margin-top: 0;
+    }
+    .welcome-message {
+        display: none; /* Hide welcome message to prioritize chat visibility */
+    }
 }

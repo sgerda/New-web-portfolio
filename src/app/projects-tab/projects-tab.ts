@@ -97,6 +97,13 @@ export class ProjectsTabComponent {
       description: 'Third project description',
       image: 'assets/images/p2.jpg',
       color: '#3ca2ca'
+    },
+    {
+      id: 4,
+      title: 'Project 4',
+      description: 'Fourth project description',
+      image:'',
+      color: '#ca3c94'
     }
   ];
 }
