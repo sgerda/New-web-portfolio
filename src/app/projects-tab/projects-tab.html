@@ -3,9 +3,38 @@
     @for (card of cards; track card.id; let i = $index) {
         <div class="card" appProjectsTab [stackFactor]="0.1" [style.top.px]="40 + (i * 30)">
             <div class="card-inner" [style.background]="card.color || '#222'" >
-                <span>0{{i+1}}</span>
-                <h2>{{card.title}}</h2> <p>{{card.description}}</p> </div>
+                <div class="card-text"><span>0{{i+1}}</span>
+                    @if (card.git_link){
+                        <a [href]="card.git_link" target="_blank">
+                            <div class="git-logo">
+                                <img [src]="card.git">
+                            </div>
+                        </a>
+                    }@else {
+                        <!-- TODO: Make the "Code Upon Request clickable to my email" -->
+                        <div class="no-link">
+                            Code Upon Request
+                        </div>
+                    }
+                    <h2>{{card.title}}</h2>
+                    
+                    <p>{{card.description}}</p>
+                    <ul>
+                        <li>{{card.bulletPoints}}</li>
+                    </ul> 
+            </div>
+
+                <div class="card-media">
+                    <img [src]="card.image" [alt]="card.title">
+                </div>
+            </div>
+                
+            
+
         </div>
+        
     } 
     </div>
 </div>
+
+

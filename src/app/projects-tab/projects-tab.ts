@@ -6,12 +6,16 @@ import { isPlatformBrowser } from '@angular/common';
 
 
 
+
 interface CardData {
   id: number;
+  git: string;
+  git_link?: string;
   title: string; 
   description: string;
   image: string;
   color?: string;
+  bulletPoints?: string[];
 }
 
 
@@ -75,34 +79,48 @@ export class ProjectsTab implements OnInit, OnDestroy{
   styleUrl: './projects-tab.css',
 })
 
+
 export class ProjectsTabComponent {
+
+  project_lnk1: string ='https://github.com/sgerda/New-web-portfolio'
+
   cards: CardData[] = [
     {
       id: 1,
-      title: 'Project 1',
-      description: 'First project description',
-      image: 'assets/images/p1.jpg',
+      git: '/bx-github.svg',
+      git_link: 'https://github.com/sgerda/New-web-portfolio',
+      title: 'Portfolio & Chatty',
+      description: 'This portfolio is also one of my personal projects, built as a way to create something truly tailored to me. Rather than using a template, I chose to design and build it from the ground up. The site is developed using Angular and TypeScript, technologies I learned specifically for this project. A key feature of the portfolio is an interactive chatbot that helps potential employers learn more about me in an engaging way. The chatbot is powered by a Retrieval-Augmented Generation (RAG) pipeline and a lightweight Ollama model running on my own Raspberry Pi server. I implemented the chatbot backend in Python using a custom API. The entire system—including the web application and chatbot backend—is self-hosted, containerized with Docker, and fully managed on my personal server.',
+      bulletPoints: ['TypeScript, Angular, Python, Docker, Ollama, RAG, CSS'],
+      image: '/portfolio.png',
       color: '#ce3535'
     },
     {
       id: 2,
-      title: 'Project 2',
-      description: 'Second project description',
-      image: 'assets/images/p2.jpg',
+      git: '/bx-github.svg',
+      title: 'Master\'s Thesis IDS Project',
+      description: 'For my Master\’s thesis, I engineered and deployed a comparative IDS framework on a Raspberry Pi server to evaluate the feasibility of adaptive security at the edge. The project involved developing a Random Forest baseline and a Deep Q-Network (DQN) agent using a custom-built Gymnasium environment to process high-velocity network traffic from the CIC-IDS-2017 dataset. To test model generalization, I isolated specific attack vectors to simulate "zero-day" vulnerabilities, measuring how each learning paradigm adapts to unseen patterns in real-time.',
+      bulletPoints: ['Networking, Research, Data Engineer, Machine Learning, Python'],
+      image: '/IDS.png',
       color: '#7e3db3'
     },
     {
       id: 3,
-      title: 'Project 3',
-      description: 'Third project description',
-      image: 'assets/images/p2.jpg',
+      git: '/bx-github.svg',
+      title: 'Internship (BVI Simulation)',
+      description: 'I designed and executed custom drone-combat simulations utilizing the LEONIDAS defense system and contributed to the construction of a physical tactical display to bridge digital simulations with physical operations.',
+      bulletPoints: ['Script Code, Networking, Simulation'],
+      image: 'BVI.png',
       color: '#3ca2ca'
     },
     {
       id: 4,
-      title: 'Project 4',
-      description: 'Fourth project description',
-      image:'',
+      git: '/bx-github.svg',
+      git_link: 'https://github.com/sgerda/PP4_WebSite_PinkFlamingo',
+      title: 'Pink Flamingo',
+      description: 'The Pink Flamingo web application is a movie search platform designed to help users find where they can stream, buy, or rent their favorite films. Developed independently, this project showcases my ability to handle all aspects of web development, from backend integration to frontend design. The application features a user-friendly interface and robust search functionality, making it a valuable tool for movie enthusiasts.',
+      bulletPoints: ['JavaScript','CSS', 'HTML', 'Note', 'React.js'],
+      image: '/pinkFlamingo.png',
       color: '#ca3c94'
     }
   ];
