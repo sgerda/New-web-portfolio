@@ -7,6 +7,7 @@ import bootstrap from '../main.server';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { ProjectsTab, ProjectsTabComponent } from './projects-tab/projects-tab';
 import { routes } from './app.routes';
+import { About } from './about/about';
 
 
 // bootstrapApplication(Component, { providers: [provideRouter(

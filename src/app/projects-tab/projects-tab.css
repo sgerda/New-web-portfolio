@@ -1,11 +1,11 @@
-html, body {
+/* html, body {
     margin: 0;
     padding: 0;
     height: 100vh;
     height: 100dvh;
     overflow: hidden;
     width: 100%;
-}
+} */
 
 .stack-container {
     
@@ -103,6 +103,7 @@ html, body {
     transition: opacity 0.3s ease;
     z-index: 5;
     opacity: 1;
+    margin-top: 20px;
 }
 
 /* --- IMAGE CONFIGURATION --- */
