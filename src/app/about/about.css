@@ -1,98 +1,160 @@
-.split-screen{
+.split-screen {
     display: flex;
-    flex-direction: row;
-    height: 100vh;
-    width: 100vw;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+    box-sizing: border-box;
+    height: 100svh;
     overflow: hidden;
 
-}
 
-.image-container{
-    width: 400px;
-    height: 800px;
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-    width: 30vw;
-    padding: 0;
+    .image-side{
+        flex: 1;
+        max-width: 400px;
+        position: relative;
+        z-index: 1;
+    }
 
-    .self-picture{
+    .timeline-side {
+        flex:1.5;
+        max-width: 1000px;
+        height: calc(100% - 1px);
+        overflow-y: auto;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        scrollbar-width:thin;
+        scrollbar-color: rgb(3, 116, 3) rgb(17, 16, 29);
+        padding: right;
+        margin-left: auto;
+        min-width: 320px;
+        max-height: calc(100svh - 100px);
+        z-index: 2;
+        padding-left: 40px;
+        
+    }
+
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        /* width: 100%;
+        max-width: 400px; */
+        border-radius: 12px;
+        padding: 0;
+
+
+    }
+    .self-picture {
         width: 100%;
-        height: 100%;
+        height: auto;
+        aspect-ratio: 3/5;
         object-fit: cover;
         object-position: top;
+        width: 100%;
+        max-width: 400px;
         border-radius: 2rem;
         padding-top: 13px;
-        /* color:#00FF41;
-        color: #ca033f */
     }
-    
-}
 
-.image-container img{
-    width: 100%;
-    max-width: 400px;
-    height: 100%;
-    max-height: 800px;
-    height: 620px;
-    border-radius: 12px;
-    padding: 10px;
-}
 
-/* timeline css start of the code */
-.timeline-wrapper{
-    flex: 1;
-    height: 100%;
-    overflow-y: auto;
-    padding: 4rem 2rem; /* Added horizontal padding */
-    
-    display: flex;          /* Add this - it was missing! */
-    flex-direction: column;
-    align-items: center;
+    /* timeline css start of the code */
+    .timeline-wrapper{
+        display: flex;
+        flex-direction: column;
+        
+        padding-bottom: 100px;
+        /* align-items: center; this make the underline glow disappear*/
+        
+        h1{
+            margin-top: 30px;
+            text-align: center;
+            font-size: 2.80rem;
+            font-weight: bold;
+            color:transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            background-image: linear-gradient(
+                to bottom,
+                #fff 0,
+                rgba(53, 53, 53) 95%
+            );
+            /* margin-bottom: 1rem; This give padding to the underglow*/
+            
+        }
 
-    h1 {
-        text-align: center;
-        font-size: 3rem;
-        font-weight: bold;
-        color: transparent;
-        -webkit-background-clip: text;
-        background-clip: text;
-        background-image: linear-gradient(
-            to bottom,
-            #fff 0,
-            rgba(53, 53, 53) 95%
-        );
-        margin-bottom: 2rem;
+        line-height: 1.2;
+        
+        .timeline-title {
+            font-size: 3rem;
+            color: #929292;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .timeline-content {
+            font-size: 1rem;
+            color: #fff;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-content ul {
+            padding: 1rem 0 0 1rem;
+            list-style-type: circle;
+        }
+
+        .timeline-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+
     }
+
+
+
+
 }
 
-.timeline-title {
-    font-size: 3rem;
-    color: #929292;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
 
-.timeline-content {
-    font-size: 1rem;
-    color: #fff;
-    padding: 1rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
 
-.timeline-content ul {
-    padding: 1rem 0 0 1rem;
-    list-style-type: circle;
-}
+@media (max-width: 768px) {
 
-.timeline-content li {
-    margin-bottom: 0.5rem;
-}
+    html, body {
+        height: auto !important;
+        overflow-y: auto !important;
+    }
 
-om-timeline {
-    width: 100%;
-    display: block;
+    body {
+        -webkit-overflow-scrolling: touch;
+        overflow-x: hidden;
+    }
+
+    .split-screen {
+        flex-direction: column;
+        height: auto !important;
+        overflow: visible !important;
+        padding: 1rem;
+    }
+
+    .image-side {
+        position: static;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .image-container {
+        width: min(160px, 60vw);
+    }
+
+    .timeline-side {
+        width: 100%;
+        height: auto !important;
+        overflow: visible !important;
+        min-width: unset;
+        margin-left: 0;
+    }
 }
