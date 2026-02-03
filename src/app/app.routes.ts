@@ -11,3 +11,4 @@ export const routes: Routes = [
     
 ];
 
+// TODO: Fix the reload issue on about page. this crash the page

@@ -4,6 +4,14 @@ import { NgxTimelineComponent, NgxTimelineEntryComponent } from '@omnedia/ngx-ti
 import { NgxNeonUnderlineComponent } from '@omnedia/ngx-neon-underline';
 import { CommonModule } from '@angular/common';
 
+
+interface TimelineEntry {
+  year: string;
+  description: string;
+  subheader?: string;
+  bulletPoints?: string;
+}
+
 @Component({
   selector: 'app-about',
   standalone: true,
@@ -15,5 +23,13 @@ import { CommonModule } from '@angular/common';
   styleUrl: './about.css',
 })
 export class About {
+
+  infoEntries: TimelineEntry[] = [
+    {
+      year: '2010',
+      description: 'In 2010, My family decided to moved to the United States from Dominican Republic. This was a big change for me as I had to adapt to a new culture and language.',
+      bulletPoints: 'none'
+    }
+  ];
 
 }
