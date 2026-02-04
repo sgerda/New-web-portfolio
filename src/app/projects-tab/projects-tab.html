@@ -1,7 +1,7 @@
 <div class="main-container">
     <div class="stack-container">
         @for (card of cards; track card.id; let i = $index) {
-            <div class="card" appProjectsTab [stackFactor]="0.1" [style.top.px]="40 + (i * 30)">
+            <div class="card" appProjectsTab [stackFactor]="0.05">
                 <div class="card-inner" [style.background]="card.color || '#222'" >
                     <div class="card-text"><span>0{{i+1}}</span>
                         @if (card.git_link){
