@@ -48,7 +48,9 @@
         .email:hover a, .resume:hover a{
             color: white;
         }
-
+        .fun-facts{
+            margin-left: 30px;
+        }
         
         
     }
@@ -231,7 +233,7 @@
 
     .timeline-wrapper{
         width: 100%;
-        padding: 0 0 30rem 0 !important; /*this line adjust the bottom padding of the timeline*/
+        padding: 0 0 55rem 0 !important; /*this line adjust the bottom padding of the timeline*/
     }
     .split-screen .timeline-wrapper .timeline-content li {
         font-size: 0.85rem; /* Even smaller for mobile screens */
