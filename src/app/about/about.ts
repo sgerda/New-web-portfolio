@@ -29,7 +29,11 @@ export class About {
   infoEntries: TimelineEntry[] = this.getInformationEntries();
 
   gmailLink: string = '/bx-gmail.svg';
-  resumeLink: string = '/resume.svg';
+  resumeLink: string = '/saul-gerda_.pdf';
+
+  openResume() {
+    window.open(this.resumeLink, '_blank');
+  }
 
   private getInformationEntries(){
 
@@ -96,6 +100,7 @@ export class About {
     return infoEntries;
   }
 }
+
 
 
 

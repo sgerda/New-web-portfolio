@@ -14,16 +14,34 @@
         <div class="info-container">
             <div class="contact-links">
                 <h2>Contact Me</h2>
-                <a href="mailto:saulgerda@gmail.com">
-                    <div class="email-logo">
-                        <img [src] ="gmailLink">
-                    </div>
-                </a>
-                <a href="Resume">
-                    <div class="resume-logo">
-                        <img [src] ="resumeLink">
-                    </div>
-                </a>
+                <div class="email">
+                    <a href="mailto:saulgerda@gmail.com">
+
+                        <ul>saulgerda@gmail.com</ul>
+                    </a>
+                </div>
+                <div class="resume">
+                    <a (click)="openResume()">
+                        Resume
+                    </a>
+                </div>
+                
+            </div>
+
+            <div class="fun-facts-wrapper">
+                <h2>Fun Facts</h2>
+                <div class="fun-facts">
+                        <ul>
+                            <li>🎮 Gamer</li>
+                            <li>🚗 Car enthusiast I love Subaru's and Rally</li>
+                            <li>🥾 Love Camping and the Outdoors</li>
+                            <li>📽️ Huge fan of movies ( I have a list of favorite movies)</li>
+                            <li>🎵 Love music and going to music festivals (I've been to around 15+ festivals)</li>
+                            <li>🦝 I love animals (although I am allergic to cats and dogs) and specially raccoons</li>
+
+                        </ul>
+                </div>
+    
             </div>
         </div>
     </div>
