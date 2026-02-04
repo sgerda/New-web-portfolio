@@ -37,6 +37,7 @@
     "@omnedia/ngx-border-beam": "^4.0.1",
     "@omnedia/ngx-neon-underline": "^4.0.1",
     "@omnedia/ngx-timeline": "^4.0.1",
+    "@omnedia/ngx-tracing-beam": "^4.0.1",
     "express": "^5.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"

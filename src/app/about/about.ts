@@ -22,9 +22,14 @@ interface TimelineEntry {
   templateUrl: './about.html',
   styleUrl: './about.css',
 })
+
+
 export class About {
 
   infoEntries: TimelineEntry[] = this.getInformationEntries();
+
+  gmailLink: string = '/bx-gmail.svg';
+  resumeLink: string = '/resume.svg';
 
   private getInformationEntries(){
 
@@ -91,5 +96,7 @@ export class About {
     return infoEntries;
   }
 }
+
+
 
 
