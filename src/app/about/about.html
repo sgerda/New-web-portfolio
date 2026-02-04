@@ -16,32 +16,55 @@
         <div class="timeline-wrapper">
             <h1>Commit Logs</h1>
             <om-neon-underline [middleColor]="'#68FE10'" [sideColor]="'#BF10FE'"></om-neon-underline>
-            <om-timeline [pathWidth]="'5px'"
-            [titleMaxWidth]="'15rem'"
-            [orientation]="'switch'"
-            [pathColor]="'#68FE10'">
-                @for (info of infoEntries; track info.year) {
-                    <om-timeline-entry>
-                        <ng-template #timelineTitle>
-                            <p class="timeline-title">{{ info.year }}</p>
-                        </ng-template>
-                        <ng-template #timelineContent>
-                            <div class="timeline-content">
-                                <p>
-                                    {{ info.description }}
-                                </p>
-                                @if(info.bulletPoints) {
-                                    <ul>
-                                        <li>{{ info.bulletPoints }}</li>
-                                    </ul>
-                                }
-                            </div>
-                        </ng-template>
-                    </om-timeline-entry>
-                }
-                ...
-            </om-timeline>
-            
+            @defer (on timer(0ms)){
+
+                
+                <om-timeline [pathWidth]="'5px'"
+                [titleMaxWidth]="'15rem'"
+                [orientation]="'switch'"
+                [pathColor]="'#68FE10'">
+                    @for (info of infoEntries; track info.year) {
+                        <!-- Check if is a subheader or not -->
+                        <!-- If is not a subheader then do normal entry -->
+                        @if(!info.subheader) {
+                            <om-timeline-entry>
+                                <ng-template #timelineTitle>
+                                    <p class="timeline-title">{{ info.year }}</p>
+                                </ng-template>
+                                <ng-template #timelineContent>
+                                    <div class="timeline-content">
+                                        <p>
+                                            {{ info.description }}
+                                        </p>
+                                        @if(info.bulletPoints) {
+                                            <ul>
+                                                @for(points of info.bulletPoints; track points) {
+                                                    <li>{{ points }}</li>
+                                                }
+                                            </ul>
+                                        }
+                                    </div>
+                                </ng-template>
+                            </om-timeline-entry>
+                            <!-- If it is a subheader then create it -->
+                        }@else {
+                            <om-timeline-entry>
+                                <ng-template #timelineTitle>
+                                    <p class="timeline-title"></p>
+                                </ng-template>
+                                <ng-template #timelineContent>
+                                    <div >
+                                        <h1>{{info.subheader}}</h1>
+                                        <om-neon-underline [middleColor]="'#68FE10'" [sideColor]="'#BF10FE'"></om-neon-underline>
+                                    </div>
+                                </ng-template>
+                            </om-timeline-entry>
+                        }
+                        
+                    }
+                    ...
+                </om-timeline>
+            }
         </div>
 
     </div>
