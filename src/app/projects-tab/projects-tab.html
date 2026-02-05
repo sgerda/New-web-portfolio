@@ -13,7 +13,9 @@
                         }@else {
                             <!-- TODO: Make the "Code Upon Request clickable to my email" -->
                             <div class="no-link">
-                                Code Upon Request
+                                <a (click)="openEmail()">
+                                    Code Upon Request
+                                </a>
                             </div>
                         }
                         <h2>{{card.title}}</h2>

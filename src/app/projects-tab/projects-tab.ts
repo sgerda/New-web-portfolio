@@ -84,6 +84,10 @@ export class ProjectsTabComponent {
 
   project_lnk1: string ='https://github.com/sgerda/New-web-portfolio'
 
+  openEmail() {
+    window.location.href = 'mailto:saulgerda@gmail.com';
+  }
+
   cards: CardData[] = [
     {
       id: 1,
@@ -111,7 +115,7 @@ export class ProjectsTabComponent {
       description: 'I designed and executed custom drone-combat simulations utilizing the LEONIDAS defense system and contributed to the construction of a physical tactical display to bridge digital simulations with physical operations.',
       bulletPoints: ['Script Code, Networking, Simulation'],
       image: 'BVI.png',
-      color: '#205a05'
+      color: '#05275a'
     },
     {
       id: 4,
