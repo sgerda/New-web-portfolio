@@ -11,7 +11,7 @@
                                 </div>
                             </a>
                         }@else {
-                            <!-- TODO: Make the "Code Upon Request clickable to my email" -->
+                            
                             <div class="no-link">
                                 <a (click)="openEmail()">
                                     Code Upon Request
@@ -26,8 +26,10 @@
                         </ul> 
                 </div>
 
-                    <div class="card-media">
-                        <img [src]="card.image" [alt]="card.title">
+                    <div class="media-placeholder">
+                        <div class="card-media">
+                            <img [src]="card.image" [alt]="card.title">
+                        </div>
                     </div>
                 </div>
                     
