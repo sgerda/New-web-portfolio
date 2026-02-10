@@ -124,6 +124,8 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    overflow: hidden;
+    position: absolute;
 }
 
 .media-placeholder{
@@ -175,57 +177,67 @@
 
 /* --- HOVER INTERACTION --- */
 
-.card-media:hover {
-    position:absolute;
+/* .card-media:hover {
+    position:relative;
     width: 100%;
     height: 100%;
     bottom: 0;
     border-radius: 30px; 
     z-index: 10; 
     
-}
-
-.card-media:hover img{
-    object-fit: cover;
-}
-
-.card-inner:has(.card-media:hover) .card-media {
-    position: absolute;
-    width: 100%;      /* Ensure it spans the full width */
-    height: 100%;     /* Ensure it spans the full height */
-    margin: 0;        /* Clear any margins */
-    border-radius: 30px;
-    z-index: 25;      /* Sit above text, but below Title/Logo */
-}
-
-.card-inner:has(.card-media:hover) .card-text p {
-    opacity: 0;
-}
-.card-inner:has(.card-media:hover) .card-text ul {
-    opacity: 0;;
-}
-.card-inner:has(.card-media:hover) .card-text h2 {
-    color: #1b9712;
-    transform: scale(1.1);
-    transition: transform 0.3s ease;
-    text-shadow: #093006 10px 10px 10px;
-}
-
-
-.card-inner:hover .card-media {
-    position: absolute;
-    /* Reset bottom/left and use inset to fill the entire .card-inner */
-    inset: 0; 
-    width: 100%;
+} */
+/* .media-placeholder:hover .card-media {
     height: 100%;
-    border-radius: 30px;
-    z-index: 25; /* Sits between text (20) and Title (30) */
-}
+    width: 100%;
+} */
 
-/* 2. Ensure image covers the full space on hover */
-.card-inner:hover .card-media img {
+/* .card-media:hover img{
     object-fit: cover;
-    transform: scale(1.05);
+    
+} */
+
+/* .media-placeholder:hover .card-media {
+    position: absolute;
+    transform: scale(0.9);
+    z-index: 25;
+    transform-origin: center;
+} */
+
+
+@media (hover: hover){.card-inner:hover .card-text p,
+    .card-inner:hover .card-text ul {
+        opacity: 0;
+        pointer-events: none; /* Prevents the invisible text from blocking the mouse */
+    }
+    .card-inner:hover .card-text h2 {
+        color: #1b9712;
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
+        text-shadow: #093006 10px 10px 10px;
+    }
+
+
+    .card-inner:hover .media-placeholder .card-media {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        /* 100% of placeholder + 50% extra height */
+        height: 150%; 
+        /* Pulls it up by the extra 50% height we just added */
+        top: -50%; 
+        border-radius: 30px; 
+        z-index: 25;
+        transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    /* 2. Ensure image covers the full space on hover */
+    .card-inner:hover .card-media img {
+        object-fit: cover;
+        transform: scale(1.05);
+        height: 100%;
+        width: 100;
+        
+    }
 }
 
 
@@ -234,16 +246,119 @@
 
 @media (max-width: 768px) {
     .stack-container {
-        grid-template-columns: 1fr;
-        padding: 20px 15px;
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        padding: 10px !important;
+        margin-left: 40px !important;
+        gap: 30px !important;
+        overflow-y: visible !important;
+        margin-bottom: 100px !important;
+    }
+
+    .main-container {
+        
+        min-height: 100vh !important;
+        display: block !important; /* Removes flex centering conflicts */
+        overflow-y: auto !important;
+    }
+    .card {
+        /* Force browser to ignore the directive's inline styles */
+        transform: none !important;
+        /* CRITICAL: Stops the browser from "snapshotting" the text */
+        will-change: auto !important; 
+        filter: none !important;
+        
+        width: 100% !important;
+        margin: 0 0 40px 0 !important;
+        height: auto !important;
+        opacity: 1 !important;
     }
 
     .card-inner {
-        min-height: 500px;
-        height: auto;
+        min-height: auto !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 20px !important;
+        box-shadow: none !important; 
+        border: 1px solid #444 !important;
+        background: #213b215e !important; /* Dark background to pop white text */
+    }
+
+    .card-text {
+        padding: 10px !important;
     }
     
     .card-text h2 {
-        font-size: 1.8rem;
+        font-size: 1.5rem !important;
+        text-shadow: none !important; /* REMOVES THE BLUR CAUSE */
+        transform: none !important;
+        color: #fff !important;
+    }
+
+    .card-text p, 
+    .card-text ul {
+        opacity: 1 !important;
+        display: block !important;
+        font-size: 0.95rem !important;
+        color: #ddd !important;
+        text-shadow: none !important;
+    }
+
+    .media-placeholder {
+        /* Force the image container to be a simple box at the bottom */
+        position: relative !important;
+        height: 200px !important; 
+        width: 100% !important;
+        margin-top: 20px !important;
+        overflow: hidden !important;
+        display: block !important;
+    }
+
+    .card-media {
+        /* Reset all absolute positioning */
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        transform: none !important;
+        border-radius: 10px !important;
+    }
+
+    .card-media img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+    .git-logo img {
+        width: 30px !important; /* Force smaller image size */
+        height: auto !important;
+    }
+    
+    /* Hide the "Hover" badges if they are distracting on mobile */
+    .no-link{
+        position: absolute !important;
+        top: -10px !important;
+        left: 10% !important;
+        cursor: pointer !important;
+        padding: 6px 14px !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        border-radius: 20px !important;
+        backdrop-filter: blur(4px) !important;
+    }
+
+    .git-logo {
+        position: absolute !important;
+        top: -20px !important;
+        left: 10% !important;
+        cursor: pointer !important;
+        padding: 6px 14px !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        border-radius: 20px !important;
+        backdrop-filter: blur(4px) !important;
     }
 }
