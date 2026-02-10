@@ -2,6 +2,8 @@
 .top-nav {
     display: flex;
     gap: 20px;
+    margin-left: auto;
+    margin-right: 0;
     align-items: center;
 }
 
@@ -40,4 +42,22 @@
 
 .links {
     margin-left: auto; /* Ensures the nav stays on the right */
+}
+
+@media (max-width: 768px) {
+    .mat-toolbar {
+        justify-content: space-between !important;
+        padding: 0 10px !important; /* Reduce padding to save space */
+    }
+
+    .top-nav {
+        gap: 10px !important; /* Reduce gap between links */
+        margin-left: auto;    /* Keep pushing them to the right */
+    }
+
+    /* 2. Make text smaller so it doesn't overlap 'PORTFOLIO' */
+    .top-nav a {
+        font-size: 0.9rem !important; /* Smaller font for mobile */
+        padding: 5px !important;
+    }
 }

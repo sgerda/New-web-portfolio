@@ -130,13 +130,16 @@
 
 @media (max-width: 768px) {
     .sidebar{
-        position: fixed;
-        width: 60px;
+        position: relative !important;
+        top: 0;
+        left: 0;
+        /* height: 100vh; */
+        width: 50px !important;
         padding: 6px 10px;
     }
 
     .sidebar.active{
-        width: 250px;
+        width: 125px !important;
         box-shadow: 5px 0 15px rgb(0,0,0,0.7);
         
     }

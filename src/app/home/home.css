@@ -149,12 +149,23 @@
         /* Add left padding equal to Sidebar Width (60px) + Gap (10px) */
         padding-left: 70px; 
     }
+    /* .bnt {
+        width: 10% !important;
+    } */
+    .chat-input-area{
+        width: 90% !important;
+    }
+    #chat-input {
+        width: 100% !important;
+    }
+
 
     /* 2. MAKE CHAT TALLER ON MOBILE */
     .chat-window {
         /* On phones, use more vertical space since we have no side content */
         height: 75vh; 
         margin-bottom: 1rem;
+        width: 350px !important;
     }
     
     /* 3. FONT SIZING */
@@ -175,6 +186,7 @@
 /* LANDSCAPE MODE FIX (Short screens) */
 @media (max-height: 500px) {
     .chat-window {
+        position: relative !important;
         height: 85vh; /* Fill almost all height */
         margin-top: 0;
     }
