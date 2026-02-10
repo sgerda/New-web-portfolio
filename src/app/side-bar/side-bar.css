@@ -25,7 +25,7 @@
 .bx-resume    { background-image: url('icons/resume.svg'); }
 .bx-menu     { background-image: url('icons/bx-menu.svg'); }
 
-
+/* TODO: Deactivate sidebar when click outside of it */
 .bx-menu:hover {
     
     cursor: pointer;
