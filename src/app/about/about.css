@@ -9,7 +9,7 @@
     overflow: visible;
     cursor: auto;
 
-
+/* TODO: fix the timeline when desktop version is resize */
     .image-side{
         flex: 1;
         max-width: 800px;

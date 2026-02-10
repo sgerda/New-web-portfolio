@@ -25,7 +25,7 @@
 .bx-resume    { background-image: url('icons/resume.svg'); }
 .bx-menu     { background-image: url('icons/bx-menu.svg'); }
 
-/* TODO: Fix the active sidebar window resizing the chatbot gets on top when side bar is active */
+
 .bx-menu:hover {
     
     cursor: pointer;
