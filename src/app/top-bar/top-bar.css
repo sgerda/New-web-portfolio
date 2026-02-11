@@ -23,6 +23,10 @@
     text-shadow: 0 0 8px rgba(113, 138, 62, 0.8);
 }
 
+.logo{
+    color: #718a3e;
+}
+
 /* The "Active" state when a user is on that page */
 /* This matches routerLinkActive="active-link" in your HTML */
 .active-link {

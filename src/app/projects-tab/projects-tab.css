@@ -61,7 +61,7 @@
     flex-direction: column;
     overflow: hidden; 
     position: relative;
-    box-shadow: 0 10px 30px rgba(4, 241, 48, 0.5);
+    box-shadow: 0 10px 30px rgba(194, 4, 241, 0.5);
     
 
 }
@@ -142,11 +142,17 @@
 }
 .git-logo{
     position: absolute;
-    top: 2%;
+    top: -10px;
     left: 10%;
     pointer-events: auto;
     z-index: 40;
     cursor: pointer;
+
+    padding: 0 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
 }
 
 .no-link{
