@@ -28,8 +28,8 @@ export class About {
 
   infoEntries: TimelineEntry[] = this.getInformationEntries();
 
-  gmailLink: string = 'bx-gmail.svg';
-  resumeLink: string = 'saul-gerda_.pdf';
+  gmailLink: string = '/bx-gmail.svg';
+  resumeLink: string = '/saul-gerda_.pdf';
 
   openResume() {
     window.open(this.resumeLink, '_blank');
