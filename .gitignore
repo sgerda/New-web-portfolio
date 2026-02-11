@@ -9,6 +9,10 @@
 /out-tsc
 /bazel-out
 
+#DOCKER and Deploy Files
+Dockerfile
+nginx.conf
+
 # Node
 /node_modules
 npm-debug.log
