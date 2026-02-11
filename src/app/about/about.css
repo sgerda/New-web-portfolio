@@ -65,7 +65,7 @@
         scroll-behavior: smooth;
         scrollbar-width:thin;
         scrollbar-color: rgb(3, 116, 3) rgb(17, 16, 29);
-        padding: right;
+        padding: 2rem;
         margin-left: auto;
         min-width: 320px;
         max-height: calc(100svh - 100px);
