@@ -8,6 +8,7 @@
     min-height: 100%;
     overflow: visible;
     cursor: auto;
+    /* justify-content: center; */
 
 /* TODO: fix the timeline when desktop version is resize */
     .image-side{
@@ -16,7 +17,7 @@
         height: auto;
         display: flex;
         flex-direction: column;
-        padding-left: 16rem;
+        padding-left: 0;
         z-index: 1;
 
         .contact-links h2{
@@ -28,7 +29,7 @@
             background-color: rgba(143, 2, 194, 30%) ;
             border-radius: 5px;
             padding: 10px 15px 10px ;
-            margin-right: 300px;
+            margin-right: 500px;
         }
         .email a, .resume a{
             color: #718a3e;
@@ -67,7 +68,7 @@
         scrollbar-color: rgb(3, 116, 3) rgb(17, 16, 29);
         padding: 2rem;
         margin-left: auto;
-        min-width: 320px;
+        min-width: 500px;
         max-height: calc(100svh - 100px);
         z-index: 2;
         
