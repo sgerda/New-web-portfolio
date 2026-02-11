@@ -5,7 +5,7 @@ import { Home } from "./home/home";
 import { About } from './about/about';
 
 export const routes: Routes = [
-    {path: '', component: Home},
+    {path: '', component: Home, 'title': 'Saul Gerda | Portfolio'},
     {path: 'about', component: About, 'title': 'About Me'},
     {path: 'projects-tab', component: ProjectsTabComponent, 'title': 'Projects'},
     
