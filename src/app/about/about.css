@@ -18,6 +18,7 @@
         display: flex;
         flex-direction: column;
         padding-left: 0;
+        padding-left: 200px;
         z-index: 1;
 
         .contact-links h2{
@@ -29,7 +30,7 @@
             background-color: rgba(143, 2, 194, 30%) ;
             border-radius: 5px;
             padding: 10px 15px 10px ;
-            margin-right: 500px;
+            margin-right: 350px;
         }
         .email a, .resume a{
             color: #718a3e;
