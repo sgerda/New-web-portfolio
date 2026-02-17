@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-side-bar',
@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './side-bar.css',
 })
 export class SideBar {
+  constructor(private eRef: ElementRef) {}
 
   githubUrl: string ='https://github.com/sgerda'
   linkedInUrl: string ='https://www.linkedin.com/in/saul-gerda-4b86b5284/'
@@ -17,6 +18,14 @@ export class SideBar {
     this.isSidebarActive = !this.isSidebarActive;
   }
 
+  @HostListener('document:click', ['$event'])
+  clickout(event: Event) {
+    if (window.innerWidth < 768 && !this.eRef.nativeElement.contains(event.target)) {
+      this.isSidebarActive = false;
+    }
+  }
+  
 
+  
 
 }

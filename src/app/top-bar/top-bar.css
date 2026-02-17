@@ -57,11 +57,16 @@
     .top-nav {
         gap: 10px !important; /* Reduce gap between links */
         margin-left: auto;    /* Keep pushing them to the right */
+        
     }
 
     /* 2. Make text smaller so it doesn't overlap 'PORTFOLIO' */
     .top-nav a {
         font-size: 0.9rem !important; /* Smaller font for mobile */
         padding: 5px !important;
+    }
+
+    .logo{
+        font-size: 1rem !important;
     }
 }

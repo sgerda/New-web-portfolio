@@ -133,9 +133,11 @@
         position: relative !important;
         top: 0;
         left: 0;
-        /* height: 100vh; */
+        height: calc(100vh - 48px) !important;
         width: 50px !important;
         padding: 6px 10px;
+        overflow-y: auto;
+        overflow-x: hidden;
     }
 
     .sidebar.active{
