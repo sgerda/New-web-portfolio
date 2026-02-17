@@ -230,8 +230,8 @@
         
     }
     .timeline-content{
-        width: 100% !important; /* Fill the available narrow space */
-        margin-right: 0 !important;
+        width: 80% !important; /* Fill the available narrow space */
+        padding-left: 20px !important;
         font-size: 0.95rem !important;
         padding: 1rem;
     }
