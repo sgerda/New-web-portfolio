@@ -192,7 +192,7 @@
     }
 
     .image-side {
-        padding: 0 70px 2px !important;
+        padding: 0 10px 2px !important;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -217,24 +217,31 @@
     }
 
     .timeline-side {
-        width: 100%;
-        height: auto !important;
+        width: 100% !important;
+        padding: 0 40px 0 65px !important;
+        box-sizing: border-box;
+        /* height: auto !important; */
         overflow: visible !important;
         min-width: unset;
         margin-left: 0;
-        min-height: 9px;
+        
+        /* min-height: 9px; */
         
         
     }
     .timeline-content{
-        margin-right: 1rem !important; /* Overwrite the 3rem margin from desktop */
-        font-size: 1.1rem !important; /* Slightly smaller text for better fitting */
-        
+        width: 100% !important; /* Fill the available narrow space */
+        margin-right: 0 !important;
+        font-size: 0.95rem !important;
+        padding: 1rem;
     }
 
-
+    .timeline-title{
+        padding-left: 1px !important;
+    }
     .timeline-wrapper{
-        width: 100%;
+        width: 100% !important;
+        max-width: 100% !important;
         padding: 0 0 55rem 0 !important; /*this line adjust the bottom padding of the timeline*/
     }
     .split-screen .timeline-wrapper .timeline-content li {
