@@ -147,7 +147,7 @@
     .content-area {
         padding: 1rem;
         /* Add left padding equal to Sidebar Width (60px) + Gap (10px) */
-        padding-left: 70px; 
+        padding-left: 15px; 
     }
     /* .bnt {
         width: 10% !important;
@@ -157,6 +157,10 @@
     }
     #chat-input {
         width: 100% !important;
+        font-size: 16px !important;
+    }
+    .bnt{
+        font-size: 16px !important;
     }
 
 
@@ -165,7 +169,7 @@
         /* On phones, use more vertical space since we have no side content */
         height: 75vh; 
         margin-bottom: 1rem;
-        width: 350px !important;
+        width: 320px !important;
     }
     
     /* 3. FONT SIZING */
@@ -181,6 +185,8 @@
     .user-msg, .bot-msg {
         max-width: 90%;
     }
+
+
 }
 
 /* LANDSCAPE MODE FIX (Short screens) */
