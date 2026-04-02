@@ -13,7 +13,8 @@ interface CardData {
   git_link?: string;
   title: string; 
   description: string;
-  image: string;
+  image?: string;
+  video?: string;
   color?: string;
   bulletPoints?: string[];
 }
@@ -125,6 +126,15 @@ export class ProjectsTabComponent {
       description: 'The Pink Flamingo web application is a movie search platform designed to help users find where they can stream, buy, or rent their favorite films. Developed independently, this project showcases my ability to handle all aspects of web development, from backend integration to frontend design. The application features a user-friendly interface and robust search functionality, making it a valuable tool for movie enthusiasts.',
       bulletPoints: ['JavaScript','CSS', 'HTML', 'Note', 'React.js'],
       image: '/pinkFlamingo.png',
+      color: '#213b215e'
+    },
+    {
+      id: 5,
+      git: '',
+      title: 'Wedding Table Seating App',
+      description: 'I developed a web mobile application to assist in guest to look up their seating at a wedding. The application features a user-friendly interface that allows the guest to put their name and a pop-up with their table number will come up.',
+      bulletPoints: ['Typescript','CSS', 'HTML', 'Database', 'Angular'],
+      video: '/wedding-web-app.mp4',
       color: '#213b215e'
     }
   ];

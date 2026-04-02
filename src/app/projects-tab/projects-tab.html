@@ -28,7 +28,13 @@
 
                     <div class="media-placeholder">
                         <div class="card-media">
-                            <img [src]="card.image" [alt]="card.title">
+                            @if (card.video){
+                                <video [src]="card.video" autoplay loop muted playsinline class="project-video">
+
+                                </video>
+                            } @else {
+                                <img [src]="card.image" [alt]="card.title">
+                            }
                         </div>
                     </div>
                 </div>

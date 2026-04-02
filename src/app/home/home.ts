@@ -2,7 +2,7 @@ import { Component, signal, ViewChild, ElementRef } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ChatService } from '../chat-service';
 import { API_KEY } from '../../../.api_key/API_KEY';
-
+//const API_KEY ='test'
 
 interface Message {
   text: string;

@@ -7,7 +7,6 @@
     width: 100%;
 } */
 
-/* TODO: fix the window resizing it gets super blurry when the desktop version is resize */
 
 .stack-container {
     
@@ -128,9 +127,23 @@
     position: absolute;
 }
 
+/* --- CARD MEDIA FOR VIDEOS --- */
+.card-media video {
+    width: 100%;       /* Match the container width */
+    height: 100%;      /* Match the container height */
+    object-fit: contain; /* This prevents stretching while filling the box */
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    border-radius: 20px; /* Match the card-media rounding */
+    
+}
+
 .media-placeholder{
     width: 100%;
-    height: 250px;
+    height: 400px;
     margin-top: auto;
     position: relative;
     overflow: visible;
