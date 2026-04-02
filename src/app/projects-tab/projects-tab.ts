@@ -90,8 +90,18 @@ export class ProjectsTabComponent {
   }
 
   cards: CardData[] = [
+    
     {
       id: 1,
+      git: '',
+      title: 'Wedding Table Seating App',
+      description: 'I developed a web mobile application to assist in guest to look up their seating at a wedding. The application features a user-friendly interface that allows the guest to put their name and a pop-up with their table number will come up.',
+      bulletPoints: ['Typescript','CSS', 'HTML', 'Database', 'Angular'],
+      video: '/wedding-web-app.mp4',
+      color: '#213b215e'
+    },
+    {
+      id: 2,
       git: '/bx-github.svg',
       git_link: 'https://github.com/sgerda/New-web-portfolio',
       title: 'Portfolio & Chatty',
@@ -101,7 +111,7 @@ export class ProjectsTabComponent {
       color: '#213b215e'
     },
     {
-      id: 2,
+      id: 3,
       git: '/bx-github.svg',
       title: 'Master\'s Thesis IDS Project',
       description: 'For my Master\’s thesis, I engineered and deployed a comparative IDS framework on a Raspberry Pi server to evaluate the feasibility of adaptive security at the edge. The project involved developing a Random Forest baseline and a Deep Q-Network (DQN) agent using a custom-built Gymnasium environment to process high-velocity network traffic from the CIC-IDS-2017 dataset. To test model generalization, I isolated specific attack vectors to simulate "zero-day" vulnerabilities, measuring how each learning paradigm adapts to unseen patterns in real-time.',
@@ -110,7 +120,7 @@ export class ProjectsTabComponent {
       color: '#213b215e'
     },
     {
-      id: 3,
+      id: 4,
       git: '/bx-github.svg',
       title: 'Internship (BVI Simulation)',
       description: 'I designed and executed custom drone-combat simulations utilizing the LEONIDAS defense system and contributed to the construction of a physical tactical display to bridge digital simulations with physical operations.',
@@ -119,7 +129,7 @@ export class ProjectsTabComponent {
       color: '#213b215e'
     },
     {
-      id: 4,
+      id: 5,
       git: '/bx-github.svg',
       git_link: 'https://github.com/sgerda/PP4_WebSite_PinkFlamingo',
       title: 'Pink Flamingo',
@@ -128,14 +138,6 @@ export class ProjectsTabComponent {
       image: '/pinkFlamingo.png',
       color: '#213b215e'
     },
-    {
-      id: 5,
-      git: '',
-      title: 'Wedding Table Seating App',
-      description: 'I developed a web mobile application to assist in guest to look up their seating at a wedding. The application features a user-friendly interface that allows the guest to put their name and a pop-up with their table number will come up.',
-      bulletPoints: ['Typescript','CSS', 'HTML', 'Database', 'Angular'],
-      video: '/wedding-web-app.mp4',
-      color: '#213b215e'
-    }
+    
   ];
 }
